@@ -4,7 +4,6 @@ import by.fin.shop_manager.core.dto.ImageDto;
 import by.fin.shop_manager.core.dto.ProductCreateDto;
 import by.fin.shop_manager.core.dto.ProductDto;
 import by.fin.shop_manager.dao.entity.Product;
-import by.fin.shop_manager.dao.entity.ProductImage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;

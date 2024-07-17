@@ -60,6 +60,10 @@ public class ImageProcessingRequestDto {
     @JsonProperty("bg_image_url")
     private String bgImageUrl = "";
 
+    public String getImageFileB64() {
+        return imageFileB64;
+    }
+
     public void setImageFileB64(String imageFileB64) {
         this.imageFileB64 = imageFileB64;
     }

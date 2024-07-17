@@ -9,26 +9,29 @@ Shop Manager is a comprehensive backend service for managing products and their 
 1.  Clone the repository:
 
 
-    git clone https://github.com/ASaurytskaya/Shop_Manager
+      git clone https://github.com/ASaurytskaya/Shop_Manager
 
 2. Navigate to the project directory:
 
 
-    cd shop-manager-api
+      cd shop-manager-api
 
 3.	Set up environment variables:
 Edit the application.yml file in the src/main/resources directory and add your configuration settings:
 
+
     image:
-        api-key: your_remove_bg_api_key
+        api_key: your_remove_bg_api_key
 
 4.	Build the project:
 
-    ./gradlew build
+
+      ./gradlew clean build
 
 5.	Run the application:
 
-    ./gradlew bootRun
+
+      ./gradlew bootRun
 
 ## Usage
 

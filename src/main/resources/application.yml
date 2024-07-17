@@ -15,7 +15,7 @@ spring:
       path: /h2-console
 
 image:
-  api_key: 8KtBHAPCv7BJ597yAAEjN4hg
+  api_key: ${IMAGE_API_KEY}
 
 server:
   port: 8080

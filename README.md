@@ -8,30 +8,25 @@ Shop Manager is a comprehensive backend service for managing products and their 
 
 1.  Clone the repository:
 
+            git clone https://github.com/ASaurytskaya/Shop_Manager
 
-      git clone https://github.com/ASaurytskaya/Shop_Manager
+4. Navigate to the project directory:
 
-2. Navigate to the project directory:
+            cd shop-manager-api
 
+5. Set up environment variables:
+      
+   Set your API Key for Remove.bg API.
 
-      cd shop-manager-api
+            export IMAGE_API_KEY=your_api_key
 
-3.	Set up environment variables:
-Edit the application.yml file in the src/main/resources directory and add your configuration settings:
+6. Build the project:
 
+            ./gradlew clean build
 
-    image:
-        api_key: your_remove_bg_api_key
+7. Run the application:
 
-4.	Build the project:
-
-
-      ./gradlew clean build
-
-5.	Run the application:
-
-
-      ./gradlew bootRun
+            ./gradlew bootRun
 
 ## Usage
 
@@ -56,7 +51,7 @@ These fields must be provided for the product to be created or updated successfu
 
 These fields can be included but are not mandatory:
 
-1.	model (String) – The model number or identifier for the product. 
+1. model (String) – The model number or identifier for the product. 
 2. rating (Double) – The average rating of the product. Can be used to reflect user reviews.
 3. warranty (String) – Warranty information for the product.
 
@@ -67,10 +62,9 @@ NOTE: A list of images associated with the product can be added later.
 
 - POST /api/products: Creates a new product.
 
+  Example of JSON request for creating a product:
 
-Example of JSON request for creating a product:
-
-    {
+      {
         "name": "Прекрасные наушники",
         "brand": "Acme",
         "model": null,
@@ -86,15 +80,14 @@ Example of JSON request for creating a product:
             "Складной дизайн",
             "Встроенный микрофон"
         ]
-    }
+      }
 
 
 - PUT /api/products/{id}: Updates an existing product.
 
-Example of JSON request for updating a product:
+  Example of JSON request for updating a product:
 
-
-    {
+      {
         "name": "Прекрасные наушники",
         "brand": "Acme",
         "model": "A95",
@@ -110,29 +103,30 @@ Example of JSON request for updating a product:
             "Складной дизайн",
             "Встроенный микрофон"
         ]
-    }
+      }
 
 
 - PUT /api/products/{id}/update_images: Updates an existing product.
-Example of JSON request for updating images of a specific product:
+  
+  Example of JSON request for updating images of a specific product:
 
 
-    [
+      [
         {
             "image_name": "image1.jpg",
             "image_data": null,
             "path_to_image": "src/main/resources/static.images/acme_w_bg_2.jpeg"
         }
-    ]
+      ]
 
 - GET /api/products/{id}: Retrieves a product by its ID.
-Example of JSON response:
 
+  Example of JSON response:
 
-    {
+      {
         "id": 1,
         "name": "Прекрасные наушники",
-         "brand": "Acme",
+        "brand": "Acme",
         "model": "A95 b",
         "category": "Электроника",
         "description": "Прекрасные наушники Acme A95, цвет: черный. Особенности: Активное шумоподавление, Складной дизайн, Встроенный микрофон.",
@@ -142,10 +136,10 @@ Example of JSON response:
         "rating": 4.5,
         "warranty": "2 года",
         "images": [
-            {
-                "image_name": "image1.jpg",
-                "image_data": "base64/...."
-            }
+              {
+                    "image_name": "image1.jpg",
+                    "image_data": "base64/...."
+              }
         ],
         "available_units": 10,
         "special_features": [
@@ -153,20 +147,20 @@ Example of JSON response:
             "Складной дизайн",
             "Встроенный микрофон"
         ]
-    }
+      }
 
 - GET /api/products/highest-rated: Retrieves the highest-rated product.
 - GET /api/products/most-expensive: Retrieves the most expensive product.
 - GET /api/products/cheapest: Retrieves the cheapest product.
 - GET /api/products: Retrieves a list of all products.
 - DELETE /api/products/{id}: Deletes a product.
+  
   Example of JSON request for deleting a product:
 
-
-    {
+      {
         "id": 1,
         "name": "Прекрасные наушники",
-         "brand": "Acme",
+        "brand": "Acme",
         "model": "A95 b",
         "category": "Электроника",
         "description": "Прекрасные наушники Acme A95, цвет: черный. Особенности: Активное шумоподавление, Складной дизайн, Встроенный микрофон.",
@@ -176,10 +170,10 @@ Example of JSON response:
         "rating": 4.5,
         "warranty": "2 года",
         "images": [
-            {
-                "image_name": "image1.jpg",
-                "image_data": "base64/...."
-            }
+              {
+                    "image_name": "image1.jpg",
+                    "image_data": "base64/...."
+              }
         ],
         "available_units": 10,
         "special_features": [
@@ -187,8 +181,7 @@ Example of JSON response:
             "Складной дизайн",
             "Встроенный микрофон"
         ]
-    }
-
+      }
 
 ### Error Handling
 

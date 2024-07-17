@@ -1,0 +1,36 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:shop_manager_db
+    username: shop_manager
+    password: shop_manager
+    driverClassName: org.h2.Driver
+    platform: h2
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+image:
+  api_key: 8KtBHAPCv7BJ597yAAEjN4hg
+
+server:
+  port: 8080
+  servlet:
+    context-path: /shop_manager
+
+logging:
+  level:
+    root: INFO
+    org:
+      springframework:
+        web: DEBUG
+    by:
+      fin:
+        shop_manager: DEBUG
+  file:
+    name: logs/spring-boot-application.log
+    path: logs
